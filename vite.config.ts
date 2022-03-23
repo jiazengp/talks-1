@@ -3,6 +3,9 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 export default defineConfig({
     base: 'join2022',
+    build: {
+        outDir: './dist/join2022',
+    },
     plugins: [
         VitePWA({
             registerType: 'autoUpdate',
