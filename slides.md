@@ -1,7 +1,7 @@
 ---
 theme: ./theme
 title: Welcome to CYSCSC (2022)
-titleTemplate: '%s - slides.zengjia.site'
+titleTemplate: '%s - CYSCSC'
 background: https://www.retiehe.com/backend/bing/1080p
 class: text-center
 highlighter: shiki
@@ -23,7 +23,7 @@ drawings:
 
 <div class="pt-12">
   <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
-    用技术改变世界 <carbon:arrow-right class="inline"/>
+    加入我们 <carbon:arrow-right class="inline"/>
   </span>
 </div>
 
@@ -45,15 +45,10 @@ The last comment block of each slide will be treated as slide notes. It will be 
 
 # 郴州雅礼学校计算机社（CYSCSC）
 
+<br />
+
 当代中学生的信息素养不仅影响着我们的发展，也影响着我们的发展，也关系到全民族计算机核心素质的提高。为促进中学生全面发展，培养学生计算机兴趣，提高学生计算机应用能力，同时也为学生自身的学科倾向提活动空间，学校成立了计算机兴趣小组。
 
-- 📝 **Text-based** - focus on the content with Markdown, and then style them later
-- 🎨 **Themable** - theme can be shared and used with npm packages
-- 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
-- 🤹 **Interactive** - embedding Vue components to enhance your expressions
-- 🎥 **Recording** - built-in recording and camera view
-- 📤 **Portable** - export into PDF, PNGs, or even a hostable SPA
-- 🛠 **Hackable** - anything possible on a webpage
 
 <br>
 <br>
@@ -104,10 +99,8 @@ Hover on the bottom-left corner to see the navigation's controls panel, [learn m
 <p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
 
 ---
-
 layout: image-right
 image: https://source.unsplash.com/collection/94734566/1920x1080
-
 ---
 
 # Code
@@ -179,7 +172,7 @@ Check out [the guides](https://sli.dev/builtin/components.html) for more.
 
 ---
 
-## class: px-20
+## class:px-20
 
 # Themes
 
@@ -380,13 +373,28 @@ class: text-center
 
 ---
 
-# Learn More
+<h2 class="text-8xl" style="position: absolute;top: 50%;left:50%;transform: translate(-50%, -50%) scale(2);">Thank You</h2>
 
-[Documentations](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/showcases.html)
+
+<template v-slot:right>
+
+# Right
+
+This shows on the right
+
+</template>
+
+<div class="abs-br m-6 flex gap-2">
+   <button @click="launchFireworks" title="Open in Editor" class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
+    <ph:confetti-bold />
+  </button>
+</div>
 
 <script setup>
 import confetti from 'canvas-confetti';
-let duration = 15 * 1000;
+
+function launchFireworks() {
+  let duration = 15 * 1000;
 let animationEnd = Date.now() + duration;
 let defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
 
@@ -406,4 +414,6 @@ let interval = setInterval(function() {
   confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
   confetti(Object.assign({}, defaults, { particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
 }, 250);
+
+}
 </script>
